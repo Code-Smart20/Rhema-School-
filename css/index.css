@@ -91,12 +91,14 @@ h2{
     border:1px solid transparent;
     font-weight: 500;
     transition: var(--transition);
+    border-radius: 2rem;
  }
 
  .btn:hover{
     background: transparent;
     color:var(--color-white);
     border-color: var(--color-white);
+    transform:translateY(15px)
     
  }
 
@@ -134,10 +136,12 @@ nav button{
 .nav__menu a{
     font-size: 0.9rem;
     transition: var(--transition);
+    padding-bottom: 0.5rem;
 }
 
 .nav__menu a:hover{
-    color:var(--color-bg2)
+    color:var(--color-bg2);
+    border-bottom: 5px solid var(--color-danger);
 }
 
 /********** Header **********/
@@ -148,6 +152,9 @@ header{
     overflow: hidden;
     height: 70vh;
     margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+   /* background-image: linear-gradient(180deg,rgba(0,0,0,0.5),var(--color-white));*/
 }
 
 .header__container{
@@ -161,3 +168,86 @@ header{
 .header__left p{
     margin: 1rem 0 2.4rem;
 }
+
+.header__right img{
+   filter: saturate(0);
+
+}
+
+
+.header__right:hover img{
+   filter: saturate(0.8);
+}
+
+
+.fade__bg{
+   height:15rem;
+   background-image: linear-gradient(180deg,
+   var(--color-bg),var(--color-black)
+   
+   );
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+
+}
+
+
+ /********** header animations **********/
+  .RED{
+   color: var(--color-danger);
+  }
+  .red{
+   background-color:var(--color-danger);
+    width:0.5rem;
+    height:0.5rem;
+    border-radius: 50%;
+    
+ }
+  .white{
+   background-color:var(--color-white);
+    width:0.5rem;
+    height:0.5rem;
+    border-radius: 50%;
+    animation:up 0.5s infinite;
+    transition: var(--transition);
+    
+ }
+ .bouncing__aniamtion{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+ }
+
+   @keyframes up {
+      from{
+         transform: translateY(0);
+
+      }
+      to{
+         transform: translateY(-30px);
+
+      }
+   }
+
+   
+   @keyframes upper {
+      from{
+         transform: translateY(0);
+
+      }
+      to{
+         transform: translateY(-60px);
+
+      }
+   }
+  .blue{
+   background-color:var(--color-bg1);
+    width:0.5rem;
+    height:0.5rem;
+    border-radius: 50%;
+    animation: upper 0.8s infinite;
+    
+ }
+   
